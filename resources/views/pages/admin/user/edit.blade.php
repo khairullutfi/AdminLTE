@@ -55,6 +55,25 @@ User
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label for="">Kategori Product</label>
+                                            <select name="companies_id" class="form-control">
+                                                <option value="{{$item->companies_id}}" selected>
+                                                    {{$item->company->name}}</option>
+                                                @foreach ($company as $companies)
+                                                <option value="{{$companies->id}}">{{$companies->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">nik</label>
+                                            <input type="number" name="nik" class="form-control" required
+                                                value="{{ $item->nik }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label for="">Password Users</label>
                                             <input type="Password" name="password" class="form-control">
                                             <small>Kosongkan jika tidak ingin mengganti password</small>

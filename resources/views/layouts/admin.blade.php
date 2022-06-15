@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>@yield('title')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @stack('prepend-style')
     @include('includes.admin.style')

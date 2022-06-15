@@ -50,6 +50,22 @@ User
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label for="">Nik</label>
+                                            <input type="number" name="nik" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Perusahaan</label>
+                                            <select name="companies_id" class="form-control">
+                                                @foreach ($company as $companies)
+                                                <option value="{{$companies->id}}">{{$companies->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label for="">Password Users</label>
                                             <input type="Password" name="password" class="form-control" required>
                                         </div>

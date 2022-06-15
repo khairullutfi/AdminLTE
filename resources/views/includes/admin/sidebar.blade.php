@@ -32,23 +32,25 @@
         Data Admin
     </div>
 
-    <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="{{route('category.index')}}">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Category</span></a>
-    </li>
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{ url('admin/show-attachment') }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Product</span></a>
+            <span>attachment</span></a>
     </li>
+
+
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{ url('admin/company-show') }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Product Gallery</span></a>
+            <span>Company</span></a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('admin/karyawan-show') }}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Karyawan</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
@@ -56,6 +58,13 @@
         <a class="nav-link" href="{{route('user.index')}}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Users</span></a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('roles.index')}}">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Roles</span></a>
     </li>
 
     <!-- Divider -->

@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Category extends Model
+class Roles extends Model
 {
     use SoftDeletes;
 
+    protected $table = "Roles";
+
   protected $fillable = [
-      'name', 'photo', 'slug'
+      'name'
   ];
 
   protected $hidden = [

@@ -18,11 +18,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'name',
         'email',
         'roles',
         'username',
+        'nik',
         'password',
+        'companies_id'
     ];
 
     /**
@@ -43,4 +46,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+     public function company(){
+        return $this->hasOne(Company::class, 'id', 'companies_id');
+    }
 }

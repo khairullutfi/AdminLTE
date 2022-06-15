@@ -29,7 +29,9 @@ User
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>username</th>
+                                            <th>nik</th>
                                             <th>roles</th>
+                                            <th>perusahaan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -59,7 +61,10 @@ User
                 { data: 'name', name: 'name'},
                 { data: 'email', name: 'email'},
                 { data: 'username', name: 'username'},
+                { data: 'nik', name: 'nik'},
                 { data: 'roles', name: 'roles'},
+                { data: 'company.name', name: 'company.name'},
+             
                 {
                     data: 'action',
                     name: 'action',

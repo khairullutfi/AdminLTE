@@ -7,14 +7,23 @@ use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
 use App\Http\Requests\Admin\UserRequest;
+use App\Models\Company;
 use App\Models\User;
 
 class UserController extends Controller
 {
-    public function index(){
+   
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         if(request()->ajax())
         {
-            $query = User::query();
+            // membuat relasinya
+            $query = User::with(['company']);
 
             return Datatables::of($query)->addColumn('action',function($item){
                 return'
@@ -50,7 +59,11 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('pages.admin.user.create');
+
+        $company = Company::all();
+        return view('pages.admin.user.create',[
+            'company' => $company
+        ]);
     }
 
     public function store(UserRequest $request)
@@ -67,16 +80,18 @@ class UserController extends Controller
     public function edit($id)
     {
         $item = User::findOrFail($id);
-
+         $company = Company::all();
         return view('pages.admin.user.edit',[
-            'item' => $item
+            'item' => $item,
+            'company' => $company
+
         ]);
     }
 
         public function update(UserRequest $request, $id)
     {
         $data = $request->all();
-
+     
         $item = User::findOrFail($id);
 
         if($request->password){
@@ -89,6 +104,8 @@ class UserController extends Controller
 
         return redirect()->route('user.index');
     }
+
+    
 
         public function destroy($id)
     {
